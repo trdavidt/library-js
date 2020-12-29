@@ -1,6 +1,6 @@
 let myLibrary = [];
 
-//test add book
+/*//test add book
 addBookToLibrary(new Book('Jane Eyre', 'Charlotte Bronte', 466, 'already read'));
 addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkein', 295, 'not read'));
 addBookToLibrary(new Book('Wuthering Heights', 'Emily Bronte', 400, 'already read'));
@@ -25,6 +25,28 @@ Book.prototype.changeRead = function() {
   if(this.read === 'already read') this.read = 'not read';
   else this.read = 'already read';
   displayLibrary();
+}*/
+
+//Book object using class
+
+//Book object
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  info() {
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
+  }
+  
+  changeRead() {
+    if(this.read === 'already read') this.read = 'not read';
+    else this.read = 'already read';
+    displayLibrary();
+  }
 }
 
  //library functions
@@ -106,5 +128,14 @@ function removeBook(id) {
   console.log("removed");
   displayLibrary();
 }
+
+//test add book
+addBookToLibrary(new Book('Jane Eyre', 'Charlotte Bronte', 466, 'already read'));
+addBookToLibrary(new Book('The Hobbit', 'J.R.R. Tolkein', 295, 'not read'));
+addBookToLibrary(new Book('Wuthering Heights', 'Emily Bronte', 400, 'already read'));
+addBookToLibrary(new Book('Hamlet', 'Wiliam Shakespeare', 300, 'already read'));
+
+//test display library
+displayLibrary();
 
 
